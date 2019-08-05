@@ -9,6 +9,8 @@ teste
 </body>
 <script>
     var lang = navigator.language || navigator.userLanguage;
+    console.log(navigator.language);
+    console.log(navigator.userLanguage);
     if (lang.indexOf('pt-BR') == 0)
         window.location = '/ptbr/inicio.html';
     else
