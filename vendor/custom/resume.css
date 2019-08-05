@@ -13,9 +13,9 @@ body {
 
 
 @media (min-width: 768px){
-.navbar-expand-md .navbar-toggler-none {
-    display: none;
-}
+  .navbar-expand-md .navbar-toggler-none {
+      display: none;
+  }
 }
 
 h1,
