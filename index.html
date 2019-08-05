@@ -5,5 +5,13 @@
 </head>
 <body>
 teste
+
 </body>
+<script>
+    var lang = navigator.language || navigator.userLanguage;
+    if (lang.indexOf('pt-BR') == 0)
+        window.location = '/ptbr/inicio.html';
+    else
+        window.location = '/en/home.html';
+</script>
 </html>
