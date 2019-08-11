@@ -101,9 +101,9 @@
              
    </div>
    
-    <section class="p-3 p-lg-5" id="rdf2rdf-padrao-mc1">
+    <section class="p-2 p-lg-5" id="rdf2rdf-padrao-mc1">
       
-        <h3 class="pt-5  mt-4 mb-3 text-primary">Padrão de Mapeamento de Classe Semelhante Semanticamente</h3>
+        <h3 class="pt-4 mt-4 mb-3 text-primary">Padrão de Mapeamento de Classe Semelhante Semanticamente</h3>
          
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Nome</u>: </span>
@@ -116,28 +116,25 @@
           <span class=" text-primary text-justify">MC1</span>
         </div>
 
-        <div class="mb-2 lead text-primary">
+        <div class="mb-2 lead text-justify text-primary">
           <span class="text-primary font-weight-bold"><u>Problema</u>: </span>
           <span class="text-primary text-justify">Como especificar o mapemeamento de instâncias de uma classe ${C_S}$ que pertence ao vocabulário ${V_S}$ em instâncias de uma classe ${C_T}$ que pertence ao vocabulário ${V_T}$, que representam o mesmo objeto do mundo real?  </span>
         </div>
         
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Precondições</u>: </span>
-          <span class="text-primary text-justify">
-                  <ul class="mt-3 ml-4 mb-2 lead text-primary">
+          <span class="text-primary">
+                  <ul class="mt-3 ml-2 mb-2 lead  text-justify text-primary">
                   	<li>${C_T}$ e ${C_S}$ são classes em ${V_T}$ e ${V_S}$ respectivamente;</li>
                   	
                   	<li>$A_1,\!\dots,A_n$ são propriedades de tipo de dados cujo domínio é ${C_S}$;</li>
-                  	
-                  	
-
+             
                   	<li>${C_T}$ e ${C_S}$ são semanticamente equivalentes, isto é, representam o mesmo objeto do mundo real;</li>
                   	
                   	<li>$f$ é um predicado de seleção sobre instâncias de ${C_S}$ (Opcional);</li>
                     
                   	<li>Os termos podem ter o mesmo nome ou nomes diferentes nas diferentes ontologias.</li>
 
-                  	
                   </ul>
           </span>
         </div>
@@ -145,45 +142,52 @@
 
         <div class="mb-2 lead text-primary">
           <span class="lead text-primary font-weight-bold"><u>Solução</u>: </span>
-          <p class="mt-3 ml-5 mb-2 lead text-primary">
-            <span class="text-primary font-weight-bold"><u>Regra de Mapeamento</u>: </span>
-            <span class="text-primary text-justify">
+          <p class="mt-3 ml-2 mb-2 lead text-primary">
+            <span class="text-primary font-weight-bold">Regra de Mapeamento: </span>
+            <span class="text-primary">
 
                $C_T(u) \leftarrow C_S(u); f(u);$ 
                
             </span>
           </p>
-          <p class=" mt-3 ml-5 mb-2 lead text-primary">
-            <span class="text-primary font-weight-bold"><u>Assertiva de Mapeamento</u>: </span>
-            <span class="text-primary text-justify">$\psi: C_T \equiv C_S [A_1,\!\dots,A_n]   /f $</span>
+          <p class=" mt-3 ml-2 mb-2 lead text-primary">
+            <span class="text-primary font-weight-bold">Assertiva de Mapeamento: </span>
+            <span class="text-primary">$\psi: C_T \equiv C_S [A_1,\!\dots,A_n]   /f $</span>
           </p>
           
-          <p class=" mt-3 ml-5 mb-2 lead text-primary">
-            <span class="text-primary font-weight-bold"><u>Mapeamento R2R</u>: </span>
-            <span class="text-primary text-justify">Template T1</span>
-            <span class="text-primary text-justify">
-            
-			</span>
-          </p>
+          <p class="lead text-primary">
+            <span class="mt-3 ml-2 mb-2 text-primary font-weight-bold">Mapeamento R2R: </span>
+             <p class="lead text-primary">
+
+	            $\begin{array}
+				\text{mp:}\psi_c \quad\quad\quad\quad\quad\quad\quad  \\
+				\quad \quad \quad \quad a \quad \text{r2r:ClassMapping;} \\
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions “prefixExp”}; \\
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \text{  r2r:sourcePattern “?SUBJ a } S:C_S  \text{ sQuery”;}\\
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{ r2r:targetPattern “?SUBJ a } T:C_T” . \\
+				\end{array}$
+
+	          </p>
+            </p>
 
         </div>
 
         <div class="mb-2 lead text-primary">
           <span class="lead text-primary font-weight-bold"><u>Exemplo</u>: </span>
-          <p class="mt-3 ml-5 mb-2 lead text-primary">
-            <span class=" text-primary font-weight-bold"><u>Regra de Mapeamento</u>: </span>
-            <span class="text-primary text-justify">
+          <p class="mt-3 ml-2 mb-2 lead text-primary">
+            <span class=" text-primary font-weight-bold">Regra de Mapeamento: </span>
+            <span class="text-primary">
 
-               <p class="mt-3  mb-2 ml-5 lead text-primary">
-	            <span class="mt-3 ml-5 mb-2 text-primary text-justify">
-	                $mo:MusicArtist(s) \leftarrow dbo:MusicArtist(s);$ 
+               <p class="mt-3 mb-2 ml-2 lead text-primary">
+	            <span class="ml-2 text-primary">
+	                $\text{mo:MusicArtist(s)}\leftarrow\text{dbo:MusicArtist(s);}$ 
 	            </span>
 
 	           </p>
 	          
-               <p class="mt-3  mb-2 ml-5 lead text-primary">
-	            <span class="mt-3 ml-5 mb-2 text-primary text-justify">
-	               $mo:Record(s) \leftarrow dbo:Album(s); dbo:releaseDate(s, v) > "2013-01-01"$ 
+               <p class="mt-2  mb-2 ml-2 lead text-primary">
+	            <span class="ml-2 mb-2 text-primary">
+	               $\text{mo:Record(s)} \leftarrow \text{dbo:Album(s);} \text{dbo:releaseDate(s, v)} \gt \text{"2013-01-01" ^^ xsd:date;}$  
 	            </span>
 
 	           </p>
@@ -192,19 +196,19 @@
             </span>
           </p>
           <p class="mb-2 lead text-primary">
-            <span class="mt-3 ml-5 mb-2 text-primary font-weight-bold"><u>Assertiva de Mapeamento</u>: </span>
-            <span class="text-primary text-justify">
+            <span class="ml-2 font-weight-bold">Assertiva de Mapeamento: </span>
+            <span class="text-primary">
 
-               <p class="mt-3  mb-2 ml-5 lead text-primary">
-	            <span class="mt-3 ml-5 mb-2 text-primary text-justify">
-	                $\psi_1: mo:MusicArtist \equiv dbo:MusicArtist$ 
+               <p class="mt-3  mb-2 ml-2 lead text-primary">
+	            <span class="mt-3 ml-2 mb-2 text-primary">
+	                $\psi_1\text{: mo:MusicArtist}\equiv\text{dbo:MusicArtist}$ 
 	            </span>
 
 	           </p>
 	          
-               <p class="mt-3  mb-2 ml-5 lead text-primary">
-	            <span class="mt-3 ml-5 mb-2 text-primary text-justify">
-	               $\psi_2: mo:Record \equiv dbo:Album / dbo:releaseDate > "2013-01-01"$
+               <p class="ml-2 lead text-primary">
+	            <span class="mt-3 ml-2 mb-2 text-primary">
+	               $\psi_2\text{: mo:Record} \equiv \text{dbo:Album/dbo:releaseDate}\gt\text{"2013-01-01" ^^ xsd:date}$
 	            </span>
 
 	           </p>
@@ -212,7 +216,31 @@
                
             </span>
           </p>
-         
+
+        </div>
+         <div class="mb-2 lead text-primary">
+          <p class="lead text-primary"><span class="font-weight-bold"><u>Padrões Relacionados</u>: </span> Nenhum.</p>         	
+          
+          <p class="mt-5 mb-2 lead text-primary text-justify">
+
+          	O mapeamento MC1 representado através da assertiva de mapemaento $\psi_1$, especifica que cada instância da classe $\text{dbo:MusicArtist}$ produz uma instância para a classe $\text{mo:MusicArtist}$. Enquanto o mapeamento MC2 representado pela assertiva de mapeamento $\psi_2$, especifica que cada instância da classe $\text{dbo:Album}$, tal que o filtro $\text{dbo:releaseDate > “2013/01/01” ^^ xsd:date}$ seja verdade, produz instâncias para a classe $\text{mo:Record}$.
+
+          </p>	
+          <p class="mb-2 lead text-primary text-justify">
+              Os padrões de mapeamento possuem templates que ajudam na criação dos mapeamentos R2R. Cada template contém as variáveis $\text{prefixExp}$ e $\text{sQuery}$. Estas variáveis auxiliam na geração dos mapeamentos R2R, pois:
+              <ul >
+              	<li>
+              		armazenam as informações necessárias para a criação dos mapeamentos R2R de acordo com os valores obtidos a partir das Assertivas de Mapeamento (AM);
+              	</li>
+              	<li>
+              		as informações estão de acordo com as regras sintáticas estipuladas pela linguagem R2R.
+              	</li>
+              	
+              </ul>
+          </p>
+          <p class="mb-2 lead text-primary text-justify">
+          	A variável $\text{prefixExp}$ armazena os prefixos de propriedades e classes presentes nos elementos de uma assertiva de mapeamento. A variável $\text{sQuery}$ armazena todas as informações necessárias para construir a cláusula (r2r:sourcePattern) de um mapeamento R2R. O conteúdo da $\text{sQuery}$ pode variar de acordo com o template utilizado. Assim, $\text{sQuery}$ pode armazenar, tanto expressões de filtro, quanto expressões de caminhos. Por exemplo, quando trata-se do template T1 dentro do padrão MC1, a variável $\text{sQuery}$ pode armazenar uma expressão de filtro como foi mostrado no mapeamento MC2 representado pela assertiva de mapeamento $\psi_2$.
+          </p>
         </div>
                  
     </section>
