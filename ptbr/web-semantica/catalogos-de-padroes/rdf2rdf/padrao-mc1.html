@@ -159,26 +159,32 @@
           <p class="lead text-primary">
               <span class="mt-3 ml-2 mb-2 text-primary font-weight-bold">Mapeamento R2R: 
               </span>
-              
-              <p class="mt-3  mb-0 lead text-primary">
-                $ \quad \text{#Template 1}$
-              </p>
-              <p class="mb-0 lead text-primary">
-                $ \quad \text{#Mapeamento}  \text{ de  Classe } \psi_C$
-              </p>
 
-              <p class="ml-4 mb-0 lead text-primary">
-                $ \text{mp:} \psi_C$
-              </p>
-              <p class="ml-4 mb-0 lead text-primary">
-                $ \text{ a  r2r:ClassMapping;}$
-              </p>
-              <p class="ml-4 mb-0 lead text-primary">
-                 $ \quad \text{  r2r:sourcePattern “?SUBJ a } S:C_S  \text{ sQuery”;}$
-              </p>
-              <p class="ml-4 mb-0 lead text-primary">
-                $ \quad  \text{ r2r:targetPattern “?SUBJ a } T:C_T” .$
-              </p>
+              <div class="card">
+                <div class="card-body">
+                  <p class="mb-0 lead text-primary">
+                    $ \quad \text{#Template 1}$
+                  </p>
+                  <p class="mb-0 lead text-primary">
+                    $ \quad \text{#Mapeamento}  \text{ de  Classe } \psi_C$
+                  </p>
+
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \text{mp:} \psi_C$
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \text{ a  r2r:ClassMapping;}$
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                     $ \quad \text{  r2r:sourcePattern “?SUBJ a } S:C_S  \text{ sQuery”;}$
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \quad  \text{ r2r:targetPattern “?SUBJ a } T:C_T” .$
+                  </p>
+                    </div>
+                  </div>
+              
+              
               
           </p> 
 
@@ -254,26 +260,28 @@
 	             $\begin{array}
 
                 
-				\text{\#Mapeamento}  \text{ de  Classe } \psi_2 \\
+    				\text{\#Mapeamento}  \text{ de  Classe } \psi_2 \\
 
-				\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
+    				\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
+    				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
 
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
-
-
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:sourcePattern “?SUBJ a dbo:Album ; dbo:releaseDate ?t .} \\
+    				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
 
 
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{FILTER(?t > ‘2013-01-01’ˆˆxsd:date)";} \\
-                
+    				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:sourcePattern “?SUBJ a dbo:Album ; dbo:releaseDate ?t .} \\
 
-				\quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:Record".}
 
-				\end{array}$
+    				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{FILTER(?t > ‘2013-01-01’ˆˆxsd:date)";} \\
+                    
+
+    				\quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:Record".}
+
+    				\end{array}$
 
 
           </p>
+
+
 
         </div>
 
