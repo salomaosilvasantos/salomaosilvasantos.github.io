@@ -8,7 +8,7 @@
   <meta name="description" content="Padrão de Mapeamento de Classe Semelhante Semanticamente">
   <meta name="author" content="">
 
-  <title>Padrão de Mapeamento de Classe Semelhante Semanticamente - MC1</title>
+  <title>Padrão de Mapeamento de Classes Não Semelhante Semanticamente - MC2</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -107,13 +107,13 @@
          
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Nome</u>: </span>
-          <span class=" text-primary text-justify">Padrão de Mapeamento de Classe Semelhante Semanticamente</span>
+          <span class=" text-primary text-justify">Padrão de Mapeamento de Classes Não Semelhante Semanticamente</span>
         </div>
 
 
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Apelido</u>: </span>
-          <span class=" text-primary text-justify">MC1</span>
+          <span class=" text-primary text-justify">MC2</span>
         </div>
 
         <div class="mb-2 lead text-justify text-primary">
@@ -146,7 +146,7 @@
             <span class="text-primary font-weight-bold">Regra de Mapeamento: </span>
             <span class="text-primary">
 
-               $C_T(u) \leftarrow C_S(u); f(u);$ 
+               $C_T(u) \leftarrow C_S(s); generateUri[\psi] (s,u); f(s);$ 
                
             </span>
           </p>
@@ -165,6 +165,8 @@
 				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions “prefixExp”}; \\
 				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \text{  r2r:sourcePattern “?SUBJ a } S:C_S  \text{ sQuery”;}\\
 				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{ r2r:targetPattern “?SUBJ a } T:C_T” . \\
+
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{ r2r:transformation “?SUBJ = generateUri[ }\psi_c \text{] (?SUBJ)” .} \\
 				\end{array}$
 
 	          </p>
@@ -180,17 +182,12 @@
 
                <p class="mt-3 mb-2 ml-2 lead text-primary">
 	            <span class="ml-2 text-primary">
-	                $\text{mo:MusicArtist(s)}\leftarrow\text{dbo:MusicArtist(s);}$ 
+	                $\text{mo:Label(u)}\leftarrow\text{dbo:MusicArtist(s); } generateUri[\psi_3] (s,u)$ 
 	            </span>
 
 	           </p>
 	          
-               <p class="mt-2  mb-2 ml-2 lead text-primary">
-	            <span class="ml-2 mb-2 text-primary">
-	               $\text{mo:Record(s)} \leftarrow \text{dbo:Album(s);} \text{dbo:releaseDate(s, v)} \gt \text{"2013-01-01" ^^ xsd:date;}$  
-	            </span>
-
-	           </p>
+              
  
                
             </span>
@@ -201,19 +198,12 @@
 
                <p class="mt-3  mb-2 ml-2 lead text-primary">
 	            <span class="mt-3 ml-2 mb-2 text-primary">
-	                $\psi_1\text{: mo:MusicArtist}\equiv\text{dbo:MusicArtist}$ 
+	                $\psi_3\text{: mo:Label}\equiv\text{myspo:MusicArtist[myspo:recordLabel]}$ 
 	            </span>
 
 	           </p>
 	          
-               <p class="ml-2 lead text-primary">
-	            <span class="mt-3 ml-2 mb-2 text-primary">
-	               $\psi_2\text{: mo:Record} \equiv \text{dbo:Album/dbo:releaseDate}\gt\text{"2013-01-01" ^^ xsd:date}$
-	            </span>
-
-	           </p>
- 
-               
+                             
             </span>
           </p>
           <p class="lead text-primary">
@@ -224,44 +214,23 @@
                 
 					\text{\#Mapeamento}  \text{ de  Classe } \psi_1 \\
 
-					\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
+					\text{mp:} \psi_3 \text{ a r2r:ClassMapping;} \\
 					\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
 
-					\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
+					\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{myspo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
 
 
-					\quad \quad \quad \quad \quad \quad \quad  \quad \text{r2r:sourcePattern “?SUBJ a dbo:MusicArtist .} \\
+					\quad \quad \quad \quad \quad \quad \quad \quad  \quad \text{r2r:sourcePattern “?SUBJ a myspo:MusicArtist .} \\
 
-					\quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:MusicArtist".}
+					 \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:Label".} \\
+
+					
+				  \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{ r2r:transformation “?SUBJ = generateUri[ }\psi_3 \text{] (?SUBJ)” .} \\
 
                 \end{array}$
                </p> 
 
-               <p class="mt-3 ml-2 mb-2 lead text-primary">
-	             
-	             $\begin{array}
-
-                
-				\text{\#Mapeamento}  \text{ de  Classe } \psi_2 \\
-
-				\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
-
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
-
-
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:sourcePattern “?SUBJ a dbo:Album ; dbo:releaseDate ?t .} \\
-
-
-				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{FILTER(?t > ‘2013-01-01’ˆˆxsd:date)";} \\
-                
-
-				\quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:Record".}
-
-				\end{array}$
-
-
-          </p>
+              
 
         </div>
 
