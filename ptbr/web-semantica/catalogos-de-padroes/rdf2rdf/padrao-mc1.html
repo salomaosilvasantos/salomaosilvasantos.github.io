@@ -216,8 +216,56 @@
                
             </span>
           </p>
+          <p class="lead text-primary">
+            <span class="mt-3 ml-2 mb-2 text-primary font-weight-bold">Mapeamento R2R: </span>
+             <p class="mb-2 lead text-primary">
+                
+                $\begin{array} 
+                
+					\text{\#Mapeamento}  \text{ de  Classe } \psi_1 \\
+
+					\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
+					\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
+
+					\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
+
+
+					\quad \quad \quad \quad \quad \quad \quad  \quad \text{r2r:sourcePattern “?SUBJ a dbo:MusicArtist .} \\
+
+					\quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:MusicArtist".}
+
+                \end{array}$
+               </p> 
+
+               <p class="mt-3 ml-2 mb-2 lead text-primary">
+	             
+	             $\begin{array}
+
+                
+				\text{\#Mapeamento}  \text{ de  Classe } \psi_2 \\
+
+				\text{mp:} \psi_2 \text{ a r2r:ClassMapping;} \\
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt . \\
+
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{dbo:} \lt \text{http://dbpedia.org/ontology/}\gt \text{";}\\
+
+
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{r2r:sourcePattern “?SUBJ a dbo:Album ; dbo:releaseDate ?t .} \\
+
+
+				\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \text{FILTER(?t > ‘2013-01-01’ˆˆxsd:date)";} \\
+                
+
+				\quad \quad \quad \quad \quad \quad \text{r2r:targetPattern "?SUBJ a mo:Record".}
+
+				\end{array}$
+
+
+          </p>
 
         </div>
+
+
          <div class="mb-2 lead text-primary">
           <p class="lead text-primary"><span class="font-weight-bold"><u>Padrões Relacionados</u>: </span> Nenhum.</p>         	
           
