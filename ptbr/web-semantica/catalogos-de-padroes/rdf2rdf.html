@@ -20,6 +20,18 @@
 
   <!-- Custom styles for this template -->
   <link href="../../../vendor/custom/css/resume.css" rel="stylesheet">
+
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+   
    
 </head>
 
@@ -103,9 +115,12 @@
 
         <p class="lead text-primary text-justify">
             Como existem dois tipos de propriedades (objeto e tipo de dados), agrupou-se os padrões em três grupos: classes, propriedades de objetos e propriedades de tipos dados. Cada grupo foi dividido para resolver um problema específico de mapeamento.
-            Por exemplo, os padrões de mapeamento de classes foram divididos em padrões de mapeamento entre classes semanticamente equivalentes e padrões de mapeamento entre classes não equivalentes (determinar quando duas classes são semanticamente equivalentes ou não, esta fora do escopo deste trabalho, mas o leitor pode ver [Rodriguez e Egenhofer, 2003] para mais detalhes sobre este assunto).
+            Por exemplo, os padrões de mapeamento de classes foram divididos em padrões de mapeamento entre classes semanticamente equivalentes e padrões de mapeamento entre classes não equivalentes (determinar quando duas classes são semanticamente equivalentes ou não, esta fora do escopo deste trabalho, mas o leitor pode ver <a href="https://ieeexplore.ieee.org/abstract/document/1185844" target="_blank">[Rodriguez e Egenhofer, 2003]</a> para mais detalhes sobre este assunto).
 
         </p>   
+         <p class="lead text-primary text-justify">
+            No restante deste trabalho, considere $O_T = (V_T, \Sigma_T)$  ser uma ontologia alvo (Ontology Target), com $V_T$ e $\Sigma_T$ sendo, respectivamente, o vocabulário alvo e o conjunto de restrições de $O_T$, e $O_S = (V_S, \Sigma_S)$ uma ontologia fonte (Source Ontology) com  $V_S$ e $\Sigma_S$ sendo, respectivamente, o vocabulário fonte e o conjunto de restrições de $O_S$.
+        </p>
 
         <p class="lead text-muted font-weight-bold">
 
