@@ -127,18 +127,13 @@
                   <ul class="mt-3 ml-2 mb-2 lead  text-justify text-primary">
                   	<li>${C_T}$ e ${C_S}$ são classes em ${V_T}$ e ${V_S}$ respectivamente;</li>
                   	
-                    <li>${C_T}$ e ${C_S}$ são classes semelhantes semanticamente. ()</li>
+                    <li>${C_T}$ e ${C_S}$ são classes semelhantes semanticamente (AMC de ${C_T}$ é da forma $\psi: C_T \equiv C_S /f $); </li>
 
+                    <li>${P_T}$ e ${P_S}$ são propriedades de objetos em ${C_T}$ e ${C_S}$, respectivamente. Os contradomínios de ${P_T}$ e ${P_S}$ são ${C_T*}$ e ${C_S*}$; </li>
 
-
-
-                  	<li>$A_1,\!\dots,A_n$ são propriedades de tipo de dados cujo domínio é ${C_S}$;</li>
+                  	<li>${C_T*}$ e ${C_S*}$ são classes semelhantes semanticamente.</li>
              
-                  	<li>${C_T}$ e ${C_S}$ são não semanticamente equivalentes, isto é, não representam mesmo objeto do mundo real;</li>
                   	
-                  	<li>$f$ é um predicado de seleção sobre instâncias de ${C_S}$ (Opcional);</li>
-                    
-                  	<li>Os termos podem ter o mesmo nome ou nomes diferentes nas diferentes ontologias.</li>
 
                   </ul>
           </span>
@@ -151,13 +146,13 @@
             <span class="text-primary font-weight-bold">Regra de Mapeamento: </span>
             <span class="text-primary">
 
-               $C_T(u) \leftarrow C_S(s); generateUri[\psi] (s,u); f(s);$ 
+               $P_T(u,v) \leftarrow C_S(u); f(u); \varphi (u,s); P_S(s,v); f(v)$, onde o filtro $\textbf{f}$ é opcional.
                
             </span>
           </p>
           <p class=" mt-3 ml-2 mb-2 lead text-primary">
             <span class="text-primary font-weight-bold">Assertiva de Mapeamento: </span>
-            <span class="text-primary">$\psi: C_T \equiv C_S [A_1,\!\dots,A_n]   /f $</span>
+            <span class="text-primary">$\psi: C_T/P_T\equiv C_S/\varphi/P_S/f $</span>
           </p>
           
           <p class="lead text-primary">
@@ -166,30 +161,35 @@
             <div class="card">
 			  <div class="card-body">
 			  	     <p class="ml-4 mb-0 lead text-primary">
-        				 $ \text{#Template } T_2$
+        				 $ \text{#Template } T_3$
 			            </p>
 			    	<p class="ml-4 mb-0 lead text-primary">
-		            	$ \text{#Mapeamento}  \text{ de  Classe } \psi_C$
+		            	$ \text{#Mapeamento}  \text{ de Propriedade}$
 		            </p>
 
 		            <p class="ml-4 mb-0 lead text-primary">
-		            	$ \text{mp:} \psi_C$
+		            	$ \text{#AMO:} \psi: C_T/P_T\equiv C_S/\varphi/P_S/f $ 
 		            </p>
+					<p class="ml-4 mb-0 lead text-primary">
+						$ \text{mp:} \psi_P$
+		            	
+		            </p>
+
 		            <p class="ml-4 mb-0 lead text-primary">
-		            	$\text{  a  r2r:ClassMapping;}$
+		            	$\text{  a  r2r:PropertyMapping;}$
 		            </p>
 		            <p class="ml-4 mb-0  lead text-primary">
 		            	$\quad \text{ r2r:prefixDefinitions “prefixExp”};$ 
 		            </p>
 		            
 		            <p class="ml-4 mb-0 lead text-primary">
-		                $\quad \text{  r2r:sourcePattern “?SUBJ a } S:C_S  \text{ sQuery”;}$
+		                $\quad \text{  r2r:mappingRef}$ mp: $\psi_C$;
 		            </p>
 		            <p class="ml-4 mb-0 lead text-primary">
-		                $\quad \text{ r2r:targetPattern “?SUBJ a } T:C_T” . $
+		                $\quad \text{ r2r:sourcePattern “?SUBJ sQuery” }. $
 		            </p>
 		            <p class="ml-4 mb-4 lead text-primary">
-		               $\quad \text{ r2r:transformation “?SUBJ = generateUri[ }\psi_c \text{] (?SUBJ)” .}$
+		               $\quad \text{ r2r:targetPattern “?SUBJ $T:P_T$ ?$P_S$”.}$
 		            </p>
 			  </div>
 			</div>
@@ -206,7 +206,7 @@
 
                <p class="mt-3 mb-2 ml-2 lead text-primary">
 	            <span class="ml-2 text-primary">
-	                $\text{mo:Label(u)}\leftarrow\text{dbo:MusicArtist(s); } generateUri[\psi_3] (s,u)$ 
+	                $\text{R4: $moa:birthPlace(s,v)$}\leftarrow\text{$dbo:MusicalArtist(s)$; } \text{$dbp:birthPlace / dbp:country(s,v)$} $ 
 	            </span>
 
 	           </p>
@@ -222,7 +222,11 @@
 
                <p class="mt-3  mb-2 ml-2 lead text-primary">
 	            <span class="mt-3 ml-2 mb-2 text-primary">
-	                $\psi_3\text{: mo:Label}\equiv\text{myspo:MusicArtist[myspo:recordLabel]}$ 
+	                $\psi_4\text{$: mo:MusicArtist / moa:birthPlace$}\equiv\text{$dbo:MusicalArtist /$}$ $\varphi$, onde
+
+	                $\varphi = [dbp:birthPlace/dbp:country]$
+
+
 	            </span>
 
 	           </p>
@@ -238,30 +242,30 @@
 				  <div class="card-body">
 				  	   
 				    	<p class="ml-4 mb-0 lead text-primary">
-        					$ \text{#Mapeamento}  \text{ de  Classe } \psi_3$
+        					$ \text{#Mapeamento}  \text{de Propriedade}$
 			            </p>
 
 			            <p class="ml-4 mb-0 lead text-primary">
-			            	$ \text{mp:} \psi_C$
+			            	$ \text{mp:} \psi_4$
 			            </p>
 			            <p class="ml-4 mb-0 lead text-primary">
-			            	$\text{ a r2r:ClassMapping;}$
+			            	$\text{ a  r2r:PropertyMapping;;}$
 			            </p>
 		           
 		                <p class="ml-4 mb-0  lead text-primary">
-		                	$ \quad  \text{r2r:prefixDefinitions}  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt .$ 
+		                	$ \quad  \text{r2r:prefixDefinitions}  \text{ “moa:} \lt \text{http://purl.org/ontology/mo/} \gt .$ 
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-		                	$  \quad  \quad  \quad  \quad   \quad \text{myspo:} \lt \text{http://purl.org/ontology/myspace#}\gt \text{";}$
+		                	$  \quad  \quad  \quad  \quad   \quad \text{dbp:} \lt \text{http://purl.org/ontology/myspace#}\gt \text{";}$
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-		                    $ \quad \text{r2r:sourcePattern “?SUBJ a myspo:MusicArtist .}$
+		                    $ \quad \text{r2r:mappingRef mp:$\psi_1$.}$
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-		                    $ \quad  \text{r2r:targetPattern "?SUBJ a mo:Label".}$
+		                    $ \quad  \text{r2r:sourcePattern "?SUBJ dbp:birthPlace ?t . ?t dbp:country ?v";}$
 		                </p>
 		                <p class="ml-4 mb-4 lead text-primary">
-		                   $ \quad \text{r2r:transformation “?SUBJ = generateUri[ }\psi_3 \text{] (?SUBJ)” .}$
+		                   $ \quad \text{r2r:targetPattern “?SUBJ moa:birthPlace ?v” .}$
 		                </p>
 				  </div>
 				</div>
