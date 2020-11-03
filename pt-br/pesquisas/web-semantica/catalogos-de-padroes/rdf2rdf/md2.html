@@ -8,7 +8,7 @@
   <meta name="description" content="Padrão de Mapeamento de Classe Semelhante Semanticamente">
   <meta name="author" content="">
 
-  <title>Padrão de Mapeamento de Propriedades de Objeto Direto de Classes Não Semelhantes Semanticamente - MO2 </title>
+  <title>Padrão de Mapeamento de Propriedades de Dados Direto de Classes Semelhantes Semanticamente - MD1</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -73,8 +73,7 @@
 
 <nav class="navbar navbar-expand-md navbar-primary fixed-top bg-primary" style="padding-top: 0px; padding-bottom: 0px;">
        
-         <h5 class="my-0 mr-md-auto text-white text-center">Padrão de Mapeamento de Propriedades de Objeto Direto de Classes Não Semelhantes Semanticamente - MO2 </h5>
-                
+         <h5 class="my-0 mr-md-auto text-white text-center">Padrão de Mapeamento de Propriedades de Dados Direto de Classes Semelhantes Semanticamente - MO1</h5>
                 
  
                 <nav class="my-2 my-md-0 mr-md-3 pt-3">
@@ -103,22 +102,22 @@
    
     <section class="p-2 p-lg-5" id="rdf2rdf-padrao-mc1">
       
-        <h3 class="pt-4 mt-4 mb-3 text-primary">Padrão de Mapeamento de Propriedades de Objeto Direto de Classes Não Semelhantes Semanticamente - MO2		</h3>
+        <h3 class="pt-4 mt-4 mb-3 text-primary">Padrão de Mapeamento de Propriedades de Dados Direto de Classes Semelhantes Semanticamente</h3>
          
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Nome</u>: </span>
-          <span class=" text-primary text-justify">Padrão de Mapeamento de Propriedades de Objeto Direto de Classes Não Semelhantes Semanticamente - MO2 </span>
+          <span class=" text-primary text-justify">Padrão de Mapeamento de Propriedades de Dados Direto de Classes Semelhantes Semanticamente</span>
         </div>
 
 
         <div class="mb-2 lead text-primary">
           <span class="text-primary font-weight-bold"><u>Apelido</u>: </span>
-          <span class=" text-primary text-justify">MO2</span>
+          <span class=" text-primary text-justify">MD1</span>
         </div>
 
         <div class="mb-2 lead text-justify text-primary">
           <span class="text-primary font-weight-bold"><u>Problema</u>: </span>
-          <span class="text-primary text-justify">Como especificar o mapemeamento de instâncias de uma classe ${C_S}$ que pertence ao vocabulário ${V_S}$ em instâncias de uma classe ${C_T}$ que pertence ao vocabulário ${V_T}$, que não representam o mesmo objeto do mundo real? </span>
+          <span class="text-primary text-justify">Como especificar .... </span>
         </div>
         
         <div class="mb-2 lead text-primary">
@@ -127,13 +126,13 @@
                   <ul class="mt-3 ml-2 mb-2 lead  text-justify text-primary">
                   	<li>${C_T}$ e ${C_S}$ são classes em ${V_T}$ e ${V_S}$ respectivamente;</li>
                   	
-                  	<li>${C_T}$ e ${C_S}$ são classes semelhantes semanticamente. (AMC de ${C_T}$ é da forma $\psi: C_T \equiv C_S /f $)  ;</li>
-             
-                  	<li>${P_T}$ é uma propriedade de objeto em ${C_T}$, cujo contradomínio (range) é uma classe ${C_T*}$ ;</li>
-                  	
-                  	<li>$\varphi$ é um caminho de ${C_S}$, cujo o contradomínio (range) é uma classe ${C_S*}$ ;</li>
-                    
+                    <li>${C_T}$ e ${C_S}$ são classes semelhantes semanticamente (AMC de ${C_T}$ é da forma $\psi: C_T \equiv C_S /f $); </li>
+
+                    <li>${P_T}$ e ${P_S}$ são propriedades de objetos em ${C_T}$ e ${C_S}$, respectivamente. Os contradomínios de ${P_T}$ e ${P_S}$ são ${C_T*}$ e ${C_S*}$; </li>
+
                   	<li>${C_T*}$ e ${C_S*}$ são classes semelhantes semanticamente.</li>
+             
+                  	
 
                   </ul>
           </span>
@@ -146,54 +145,94 @@
             <span class="text-primary font-weight-bold">Regra de Mapeamento: </span>
             <span class="text-primary">
 
-               $P_T(s,u) \leftarrow C_S(s); f(s); generateUri[\psi] (s,u);$ onde o filtro $\textbf{f}$ é opcional. 
+               $P_T(u,v) \leftarrow C_S(u); f(u); \varphi (u,s); P_S(s,v); f(v)$, onde o filtro $\textbf{f}$ é opcional.
                
             </span>
           </p>
           <p class=" mt-3 ml-2 mb-2 lead text-primary">
             <span class="text-primary font-weight-bold">Assertiva de Mapeamento: </span>
-            <span class="text-primary">$\psi: C_T/ P_T \equiv C_S [A_1,\!\dots,A_n] /NULL $</span>
+            <span class="text-primary">$\psi: C_T/P_T\equiv C_S/\varphi/P_S/f $</span>
           </p>
           
           <p class="lead text-primary">
             <span class="mt-3 ml-2 mb-2 text-primary font-weight-bold">Mapeamento R2R: </span>
 
-            <div class="card">
-			  <div class="card-body">
-			  	     <p class="ml-4 mb-0 lead text-primary">
-        				 $ \text{#Template } T_5$
-			            </p>
-			    	<p class="ml-4 mb-0 lead text-primary">
-		            	$ \text{#Mapeamento}  \text{de Propriedade} $
-		            </p>
-					<p class="ml-4 mb-0 lead text-primary">
-		            	$ \text{# AMO} \psi: C_T/ P_T \equiv C_S [A_1,\!\dots,A_n] /NULL $
-		            </p>
-		            <p class="ml-4 mb-0 lead text-primary">
-		            	$ \text{mp:} \psi_P$
-		            </p>
-		            <p class="ml-4 mb-0 lead text-primary">
-		            	$\text{  $\textbf{a r2r:PropertyMapping}$ ;}$
-		            </p>
-		            <p class="ml-4 mb-0  lead text-primary">
-		            	$\text{ $\textbf{r2r:prefixDefinitions}$ “$\underline{prefixExp}$”};$ 
-		            </p>
-		            
-		            <p class="ml-4 mb-0 lead text-primary">
-		                $\text{  $\textbf{r2r:mappingRef}$ }$ $\text{mp:}$ $\psi_C$  
-		            </p>
-		            <p class="ml-4 mb-0 lead text-primary">
-		                $\quad \text{ $\textbf{r2r:sourcePattern}$ “?SUBJ a } T:C_T” . $
-		            </p>
-		            <p class="ml-4 mb-0 lead text-primary">
-		                $\quad \text{ $\textbf{r2r:targetPattern}$ “?SUBJ a } T:P_T ?s” . $
-		            </p>
-		            <p class="ml-4 mb-4 lead text-primary">
-		               $\text{ $\textbf{r2r:transformation}$ “?s = generateUri[ }\psi_R \text{] (?SUBJ)” .}$
-		            </p>
-			  </div>
-			</div>
-               
+          <div class="row">
+            <div class="col-sm-6">  
+              <div class="card">
+  			        <div class="card-body">
+  			  	      <p class="ml-4 mb-0 lead text-primary">
+          				 $ \text{#Template } T_3$
+  			          </p>
+  			    	    <p class="ml-4 mb-0 lead text-primary">
+  		            	$ \text{#Mapeamento}  \text{ de Propriedade}$
+  		            </p>
+
+  		            <p class="ml-4 mb-0 lead text-primary">
+  		            	$ \text{#AMO:} \psi: C_T/P_T\equiv C_S/\varphi/P_S/f $ 
+  		            </p>
+  					      <p class="ml-4 mb-0 lead text-primary">
+  					       	$ \text{mp:} \psi_P$
+  		            	
+  		            </p>
+
+  		            <p class="ml-4 mb-0 lead text-primary">
+  		            	$\text{   $\textbf{a  r2r:PropertyMapping;}$}$
+  		            </p>
+  		            <p class="ml-4 mb-0  lead text-primary">
+  		            	$\quad \text{ $\textbf{r2r:prefixDefinitions}$ “$\underline{prefixExp}$}”;$ 
+  		            </p>
+  		            
+  		            <p class="ml-4 mb-0 lead text-primary">
+  		                $\quad \text{  $\textbf{r2r:mappingRef}$}$ mp: $\psi_C$;
+  		            </p>
+  		            <p class="ml-4 mb-0 lead text-primary">
+  		                $\quad \text{ $\textbf{r2r:sourcePattern}$ “?SUBJ $\underline{sQuery}$” }. $
+  		            </p>
+  		            <p class="ml-4 mb-4 lead text-primary">
+  		               $\quad \text{ $\textbf{r2r:targetPattern}$ “?SUBJ $\textbf{$T:P_T$}$ ?$P_S$”.}$
+  		            </p>
+  			        </div>
+  			      </div>
+            </div>
+            <div class="col-sm-6">  
+              <div class="card">
+                <div class="card-body">
+                  <p class="ml-4 mb-0 lead text-primary">
+                   $ \text{#Template } T_3$
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \text{#Mapeamento}  \text{ de Propriedade}$
+                  </p>
+
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \text{#AMO:} \psi: C_T/P_T\equiv C_S/\varphi/P_S/f $ 
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $ \text{mp:} \psi_P$
+                    
+                  </p>
+
+                  <p class="ml-4 mb-0 lead text-primary">
+                    $\text{   $\textbf{a  r2r:PropertyMapping;}$}$
+                  </p>
+                  <p class="ml-4 mb-0  lead text-primary">
+                    $\quad \text{ $\textbf{r2r:prefixDefinitions}$ “$\underline{prefixExp}$}”;$ 
+                  </p>
+                  
+                  <p class="ml-4 mb-0 lead text-primary">
+                      $\quad \text{  $\textbf{r2r:mappingRef}$}$ mp: $\psi_C$;
+                  </p>
+                  <p class="ml-4 mb-0 lead text-primary">
+                      $\quad \text{ $\textbf{r2r:sourcePattern}$ “?SUBJ $\underline{sQuery}$” }. $
+                  </p>
+                  <p class="ml-4 mb-4 lead text-primary">
+                     $\quad \text{ $\textbf{r2r:targetPattern}$ “?SUBJ $\textbf{$T:P_T$}$ ?$P_S$”.}$
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>     
             
 
         </div>
@@ -206,8 +245,7 @@
 
                <p class="mt-3 mb-2 ml-2 lead text-primary">
 	            <span class="ml-2 text-primary">
-	                $\text{R8: $\textit{moa:hasLabel(s,o)}$ }$ $\leftarrow$ $\text{ $\textit{myspo:MusicArtist(s)}$; }$ 
-	                 $\textit{generateUri[$\psi_8$] (s,o)}$  
+	                $\text{R4: $moa:birthPlace(s,v)$}\leftarrow\text{$dbo:MusicalArtist(s)$; } \text{$dbp:birthPlace / dbp:country(s,v)$} $ 
 	            </span>
 
 	           </p>
@@ -223,8 +261,12 @@
 
                <p class="mt-3  mb-2 ml-2 lead text-primary">
 	            <span class="mt-3 ml-2 mb-2 text-primary">
-	                $\psi_8\text{: $\textit{mo:MusicArtist/moa:hasLabel}$ }$  $\equiv$  $\text{ $\textit{myspo:MusicArtist [myspo:recordLabel]}$ / NULL }$ 
-	            </span> 
+	                $\psi_4\text{$: mo:MusicArtist / moa:birthPlace$}\equiv\text{$dbo:MusicalArtist /$}$ $\varphi$, onde
+
+	                $\varphi = [dbp:birthPlace/dbp:country]$
+
+
+	            </span>
 
 	           </p>
 	          
@@ -239,33 +281,32 @@
 				  <div class="card-body">
 				  	   
 				    	<p class="ml-4 mb-0 lead text-primary">
-        					$ \text{#Mapeamento}  \text{ de Propriedade} $
+        					$ \text{#Mapeamento}  \text{de Propriedade}$
 			            </p>
 
 			            <p class="ml-4 mb-0 lead text-primary">
-			            	$ \text{mp:} \psi_8$
+			            	$ \text{mp:} \psi_4$
 			            </p>
 			            <p class="ml-4 mb-0 lead text-primary">
-			            	$\text{ $\textbf{a r2r:PropertyMapping;}$ }$
+			            	$\text{ $\textbf{a  r2r:PropertyMapping;}$}$
 			            </p>
 		           
 		                <p class="ml-4 mb-0  lead text-primary">
-		                	$ \quad  \text{ $\textbf{r2r:prefixDefinitions}$ }  \text{ “mo:} \lt \text{http://purl.org/ontology/mo/} \gt .$ 
+		                	 $\textbf{r2r:prefixDefinitions}$  $\text{ “moa”:}$ $\lt \text{http://purl.org/ontology/mo/}\gt.$
+
+
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-		                	$  \quad  \quad  \quad  \quad   \quad \text{moa:} \lt \text{http://purl.org/ontology/myspace#}\gt \text{";}$
+		                	$  \quad  \quad  \quad  \quad  \quad \text{dbp:} \lt \text{http://purl.org/ontology/myspace#}\gt \text{";}$
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-			            	$ \text{ $\textbf{r2r:mappingRef mp:}$ } \psi_3$;
-			            </p>
-		                <p class="ml-4 mb-0 lead text-primary">
-		                    $ \quad \text{ $\textbf{r2r:sourcePattern}$ “?SUBJ a mo:Label” ;}$
+		                    $ \text{ $\textbf{r2r:mappingRef}$ mp:$\psi_1$.} $
 		                </p>
 		                <p class="ml-4 mb-0 lead text-primary">
-		                    $ \quad  \text{ $\textbf{r2r:targetPattern}$ "?SUBJ a  moa:hasLabel ?r”;}$
+		                    $ \quad  \text{$\textbf{r2r:sourcePattern}$ “?SUBJ dbp:birthPlace ?t . ?t dbp:country ?v;}$
 		                </p>
 		                <p class="ml-4 mb-4 lead text-primary">
-		                   $ \quad \text{ $\textbf{r2r:transformation}$ “?r = generateUri[ }\psi_3 \text{] (?SUBJ)” .}$
+		                   $ \quad \text{$\textbf{r2r:targetPattern}$ “?SUBJ moa:birthPlace ?v” .}$
 		                </p>
 				  </div>
 				</div>
@@ -278,12 +319,11 @@
 
 
          <div class="mb-2 lead text-primary">
-          <p class="lead text-primary"><span class="font-weight-bold"><u>Padrões Relacionados</u>: </span> Padrão de Mapeamento de Classe Não Semelhante Semanticamente (MC1).</p>         	
+          <p class="lead text-primary"><span class="font-weight-bold"><u>Padrões Relacionados</u>: </span> Padrão de Mapeamento de Classe Semelhante Semanticamente (MC1).</p>         	
          
           <p class="mb-2 lead text-primary text-justify">
-          	A AMO $\psi_8$ especifica que cada tripla RDF obedecendo o padrão de tripla: 
-          	$\lt\text{$\textit{?s a mo:Label}$}\gt$ produz triplas da forma:$\lt\text{$\textit{?s moa:hasLabel ?r}$}\gt$, onde ?r é o URI gerado para a classe embutida $\text{$\textit{myspo:MusicaArtist [myspo:recordLabel]}$.}$ As variáveis utilizadas no template T5 são similares às descritas para os templates T2 e T3.
-
+          	 A AMO $\psi_4$ especifica que cada caminho formado pelas triplas RDF obedecendo o padrão de tripla: 
+          	 $\lt \textit{?s dbp:birthPlace ?u}\ \gt$  $\lt \textit{?u dbp:country ?t}\ \gt$ produz triplas RDF com o padrão: $\lt \textit{?s moa:birthPlace ?t}\ \gt$. O template T3 já foi apresentado no padrão MD1.
           </p>
         </div>
                  
